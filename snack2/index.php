@@ -18,7 +18,7 @@ if (key_exists("mail", $_GET)) {
 };
 
 if (key_exists("age", $_GET)) {
-    $age = (int)$_GET["age"];
+    $age = $_GET["age"];
 };
 
 $result = true;
@@ -27,7 +27,7 @@ if (!strpos($mail, "@") || !strpos($mail, ".", strpos($mail, "@"))) {
     $result = false;
 };
 
-if (!is_int($age)) {
+if (!is_numeric($age)) {
     $result = false;
 };
 
